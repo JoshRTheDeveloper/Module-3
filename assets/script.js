@@ -1,25 +1,57 @@
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
-
-var chars = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var passwordLength = 12;
-var password = "";
+const generateBtn = document.getElementById("generate");
 
 function generatePassword() {
-  for (var i = 0; i <= passwordLength; i++) {
-    var randomNumber = Math.floor(Math.random() * chars.length);
-    password += chars.substring(randomNumber, randomNumber +1);
-   }
+  var lower = "abcdefghijklmnopqrstuvwxyz";
+  var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var numeric = "0123456789";
+  var special = "!@#$%^&*()";
+
+  var password = ""; 
+
+  
+  var passLength = parseInt(prompt("Enter the password length (between 8 and 128 characters):"));
+
+ 
+  if (isNaN(passLength) || passLength < 8 || passLength > 128) {
+    alert("Invalid password length. Please enter a number between 8 and 128.");
+    return "";
+  }
+
+  
+  var includeLowercase = confirm("Include lowercase characters?");
+  var includeUppercase = confirm("Include uppercase characters?");
+  var includeNumeric = confirm("Include numeric characters?");
+  var includeSpecial = confirm("Include special characters?");
+
+ 
+  if (!includeLowercase && !includeUppercase && !includeNumeric && !includeSpecial) {
+    alert("At least one character type must be selected.");
+    return "";
+  }
+
+  
+  var chars = "";
+  if (includeLowercase) chars += lower;
+  if (includeUppercase) chars += upper;
+  if (includeNumeric) chars += numeric;
+  if (includeSpecial) chars += special;
+
+  
+  for (var i = 0; i < passLength; i++) {
+    var randomNum = Math.floor(Math.random() * chars.length);
+    password += chars.substring(randomNum, randomNum+ 1);
+  }
+
+  return password;
 }
 
-// Write password to the #password input
+
 function writePassword() {
   var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  var passwordTextarea = document.getElementById("password");
 
-  passwordText.value = password;
-
+  passwordTextarea.value = password;
 }
 
-// Add event listener to generate button
+
 generateBtn.addEventListener("click", writePassword);
