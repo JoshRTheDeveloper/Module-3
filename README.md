@@ -1,8 +1,8 @@
-# Module-1-Challenge
+# Module-3-Challenge
 
 ## Description
 
-This is a project that aims to take starter code and update it to meet accessibility standards. 
+This project aims to generate a passsword after a prompt is answered and confirms. The password will include specified characters and length can be decided within certain limits. 
 
 
 ## Installation
@@ -11,19 +11,19 @@ N/A
 
 ## Usage
 
-To demonstrate the skill of making accessible code.
+To generate a random password that will be strong and usable. 
 
 ## Deployment
-https://joshrthedeveloper.github.io/Module-1-Challenge/
+https://joshrthedeveloper.github.io/Module-3/
 
 #### Screenshot
 
-![my screenshot](https://raw.githubusercontent.com/JoshRTheDeveloper/Module-1/main/assets/images/joshrthedeveloper.github.io_Module-1-Challenge_.png).
+![my screenshot](./assets/joshrthedeveloper.github.io_Module-3_.png).
 
 ## Credits
 
-N/A
+Reset style is provided by http://meyerweb.com/eric/tools/css/reset/ 
 
 ## License
 
-Please refer to the LICENSE in the repo.
+Please refer to the MIT LICENSE in the repo.
