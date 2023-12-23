@@ -1,9 +1,11 @@
+/* Padding and border included in width and height */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+/* Take up 100% availble space only with 0 padding and margin - applied to a DIV as well*/
 html,
 body,
 .wrapper {
@@ -16,7 +18,7 @@ body {
   font-family: sans-serif;
   background-color: #f9fbfd;
 }
-
+/* modifying first DIV */
 .wrapper {
   padding-top: 30px;
   padding-left: 20px;
@@ -29,7 +31,7 @@ header {
   padding-top: 0px;
   color: hsl(206, 17%, 28%);
 }
-
+/* modifies second DIV */
 .card {
   background-color: hsl(0, 0%, 100%);
   border-radius: 5px;
@@ -42,6 +44,7 @@ header {
   padding: 30px 40px;
 }
 
+/* before any children of third DIV */
 .card-header::after {
   content: " ";
   display: block;
@@ -49,15 +52,16 @@ header {
   background: #e7e9eb;
   height: 2px;
 }
-
+/* Foruth DIV */
 .card-body {
   min-height: 100px;
 }
-
+/* last DIV */
 .card-footer {
   text-align: center;
 }
 
+/* before any children of last div */
 .card-footer::before {
   content: " ";
   display: block;
@@ -65,13 +69,14 @@ header {
   background: #e7e9eb;
   height: 2px;
 }
-
+/* after any children of last div */
 .card-footer::after {
   content: " ";
   display: block;
   clear: both;
 }
 
+/* styles the button */
 .btn {
   border: none;
   background-color: hsl(360, 91%, 36%);
@@ -88,15 +93,18 @@ header {
   cursor: pointer;
 }
 
+/* styles the button */
 button[disabled] {
   cursor: default;
   background: #c0c7cf;
 }
 
+
 .float-right {
   float: right;
 }
 
+/* modifies textarea */
 #password {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -118,6 +126,7 @@ button[disabled] {
   overflow: hidden;
 }
 
+/* modifies the button and password to change upon width */
 @media (max-width: 690px) {
   .btn {
     font-size: 1rem;
